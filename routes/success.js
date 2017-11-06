@@ -12,19 +12,11 @@ MongoClient.connect(url, function(err, db) {
     var cursor = db.collection('formdata').find();
 
     cursor.each(function(err, doc) {
- //res.json(doc.firstname);
- // var x =res.json(doc);
- //      res.render('success', {
- //    data: x
- //  });
-  var arr = Object.keys(doc).map(function(k) { 
-
-    if(doc === null) {return null}
-  	else 
-console.log(doc[k])
-  		//return obj[k] 
-  	});
-
+ console.log(doc)
+      res.render('success', {
+    data: doc
+  });
+ 
     });
 
 }); 
