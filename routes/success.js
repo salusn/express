@@ -9,18 +9,15 @@ router.get('/', function(req, res){
 
 MongoClient.connect(url, function(err, db) {
 
-    var cursor = db.collection('formdata').find();
+db.collection('formdata').find().toArray(function(err, docs){
+      if(err) throw err;
 
-    cursor.each(function(err, doc) {
- console.log(doc)
-      res.render('success', {
-    data: doc
-  });
- 
+      res.render('success', {data: docs});
+
+      db.close();
+
     });
-
 }); 
-
   
 });
 

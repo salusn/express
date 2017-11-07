@@ -1,8 +1,10 @@
 table
   thead
     tr
-      th Description
+      th Firstname
+      th Lastname
   tbody
     each dat in data
       tr
-        td=dat
+        td= dat.firstname
+        td= dat.lastname
