@@ -31,10 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', form);
 app.use('/users', users);
 app.use('/success', success);
-app.use('/:_id/edit', edit);
+app.use('/edit/:_id', edit);
 
 
-
+require('./routes/edit.js');
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
