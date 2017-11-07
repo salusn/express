@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var form = require('./routes/form');
 var success = require('./routes/success');
+var edit = require('./routes/edit');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', form);
 app.use('/users', users);
 app.use('/success', success);
+app.use('/edit', edit);
 
 
 
