@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', form);
 app.use('/users', users);
 app.use('/success', success);
-app.use('/edit/:_id', edit);
+app.get('/edit/:id', edit);
 
 
 // catch 404 and forward to error handler
