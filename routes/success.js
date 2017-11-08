@@ -10,6 +10,7 @@ router.get('/', function(req, res){
 MongoClient.connect(url, function(err, db) {
 
 db.collection('formdata').find().toArray(function(err, docs){
+
       if(err) throw err;
 
       res.render('success', {data: docs});
