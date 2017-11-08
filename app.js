@@ -34,7 +34,6 @@ app.use('/success', success);
 app.use('/edit/:_id', edit);
 
 
-require('./routes/edit.js');
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
