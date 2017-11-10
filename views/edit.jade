@@ -1,2 +1,11 @@
-block content
-    h1= _id
+table
+  thead
+    tr
+      th Firstname
+      th Lastname
+
+  tbody
+    each dat in data
+      tr
+        td= dat.firstname
+        td= dat.lastname
