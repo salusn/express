@@ -18,8 +18,9 @@ router.get('/edit/:id', function(req, res, next) {
 	});
 });
 
-router.post('/', function(req, res) {
-        
+router.post('/edit/:id', function(req, res) {
+    console.log(req.params.id);
+    res.redirect('/')
 	MongoClient.connect(url, function(err, db) {
 	})
 });	

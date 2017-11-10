@@ -32,6 +32,7 @@ app.use('/', form);
 app.use('/users', users);
 app.use('/success', success);
 app.get('/edit/:id', edit);
+app.post('/edit/:id', edit);
 
 
 // catch 404 and forward to error handler
