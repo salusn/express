@@ -13,6 +13,7 @@ var users = require('./routes/users');
 var form = require('./routes/form');
 var success = require('./routes/success');
 var edit = require('./routes/edit');
+var del = require('./routes/delete');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/users', users);
 app.use('/success', success);
 app.get('/edit/:id', edit);
 app.post('/edit/:id', edit);
+app.get('/delete/:id', del);
 
 
 // catch 404 and forward to error handler
