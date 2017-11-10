@@ -18,4 +18,10 @@ router.get('/edit/:id', function(req, res, next) {
 	});
 });
 
+router.post('/', function(req, res) {
+        
+	MongoClient.connect(url, function(err, db) {
+	})
+});	
+
 module.exports = router;
