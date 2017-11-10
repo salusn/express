@@ -4,11 +4,13 @@ table
       th Firstname
       th Lastname
       th Edit
+      th Delete
   tbody
     each dat in data
       tr
         td= dat.firstname
         td= dat.lastname
         td #[a(href="edit/#{dat._id}") Edit]
+        td #[a(href="delete/#{dat._id}") Delete]
 
         
