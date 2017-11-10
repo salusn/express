@@ -20,8 +20,18 @@ router.get('/edit/:id', function(req, res, next) {
 
 router.post('/edit/:id', function(req, res) {
     console.log(req.params.id);
-    res.redirect('/')
+    console.log(req.body.firstname);
+    
 	MongoClient.connect(url, function(err, db) {
+		var id = req.params.id;
+		var collection = db.collection('formdata');
+		var o_id = new ObjectID(id);
+
+	collection.update({"_id": {$eq: o_id}}, {$set:{"firstname": req.body.firstname,"lastname": req.body.lastname}},function(er, result){
+      assert.equal(er, null);
+      res.redirect('/success')
+      });
+    db.close();
 	})
 });	
 
